@@ -1,0 +1,245 @@
+body {
+  margin: 0px;
+  width: 100%;
+  height: 100vh;
+  background-color: hsl(0, 0%, 100%);
+  background-image: url("./images/bg-pattern-top-desktop.svg"),
+    url("./images/bg-pattern-bottom-desktop.svg");
+  background-repeat: no-repeat;
+  background-position: left top, center bottom;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "League Spartan", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: hsl(303, 10%, 53%);
+}
+
+.container {
+  width: 80%;
+  height: 80%;
+
+  display: grid;
+  gap: 50px;
+  grid-template-columns: 1fr 1.5fr;
+  grid-template-rows: 1.5fr 1fr;
+  grid-template-areas:
+    "text-con rev-con"
+    "test-con test-con";
+}
+
+.text-container {
+  grid-area: text-con;
+  display: grid;
+  grid-template-rows: 1fr 0.5fr;
+}
+
+.text-1,
+.text-2 {
+  margin: 0px;
+}
+
+.text-1 {
+  max-width: 70%;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 60px;
+  color: hsl(300, 43%, 22%);
+}
+
+.text-2 {
+  line-height: 30px;
+}
+
+.review-container {
+  width: 90%;
+  margin: 20px 0px;
+  grid-area: rev-con;
+  display: grid;
+  row-gap: 15px;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  justify-self: end;
+}
+
+.review-1 {
+  grid-column-start: 1;
+  grid-column-end: 8;
+}
+
+.review-2 {
+  grid-column-start: 2;
+  grid-column-end: 9;
+}
+
+.review-3 {
+  grid-column-start: 3;
+  grid-column-end: 10;
+}
+
+.review {
+  background-color: hsl(300, 24%, 96%);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px;
+  color: hsl(300, 43%, 22%);
+  font-weight: 500;
+  border-radius: 10px;
+}
+
+.testimonial-container {
+  grid-area: test-con;
+  display: grid;
+  column-gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(18, 1fr);
+}
+
+.card-1 {
+  grid-row-start: 1;
+  grid-row-end: 17;
+}
+
+.card-2 {
+  grid-row-start: 2;
+  grid-row-end: 18;
+}
+
+.card-3 {
+  grid-row-start: 3;
+  grid-row-end: 19;
+}
+
+.card {
+  background-color: hsl(300, 43%, 22%);
+  padding: 30px;
+  min-height: 235px;
+  display: grid;
+  row-gap: 30px;
+  grid-template-rows: 1fr 2fr;
+  border-radius: 10px;
+  color: hsl(0, 0%, 100%);
+}
+
+.profile {
+  display: grid;
+  column-gap: 20px;
+  row-gap: 10px;
+  grid-template-columns: 1fr 6fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "pro-img pro-name"
+    "pro-img pro-stat";
+}
+
+.profile-img {
+  grid-area: pro-img;
+  width: 40px;
+  border-radius: 50%;
+  align-self: center;
+}
+
+.profile-name,
+.profile-status {
+  margin: 0px;
+}
+
+.profile-name {
+  grid-area: pro-name;
+  align-self: end;
+  font-weight: 500;
+}
+
+.profile-status {
+  grid-area: pro-stat;
+  align-self: start;
+  color: hsl(333, 80%, 67%);
+}
+
+.testimonial {
+  line-height: 30px;
+}
+
+@media (max-width: 375px) {
+  body {
+    background-image: url("./images/bg-pattern-top-mobile.svg"),
+      url("./images/bg-pattern-bottom-mobile.svg");
+    font-size: 18px;
+  }
+
+  .container {
+    width: 90%;
+    gap: 0px;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+      "text-con"
+      "rev-con"
+      "test-con";
+  }
+
+  .text-container {
+    grid-template-rows: repeat(2, auto);
+    text-align: center;
+  }
+
+  .text-1 {
+    max-width: 100%;
+  }
+
+  .review-container {
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 75px);
+    grid-template-areas:
+      "rev-1"
+      "rev-2"
+      "rev-3";
+  }
+
+  .review-1 {
+    grid-area: rev-1;
+  }
+
+  .review-2 {
+    grid-area: rev-2;
+  }
+
+  .review-3 {
+    grid-area: rev-3;
+  }
+
+  .review {
+    flex-direction: column;
+  }
+
+  .testimonial-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+      "c-1"
+      "c-2"
+      "c-3";
+    row-gap: 20px;
+  }
+
+  .card-1 {
+    grid-area: c-1;
+  }
+
+  .card-2 {
+    grid-area: c-2;
+  }
+
+  .card-3 {
+    grid-area: c-3;
+  }
+
+  .card {
+    height: 250px;
+  }
+}
